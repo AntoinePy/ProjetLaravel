@@ -31,6 +31,18 @@
                     <a class="navbar-brand" href="{{ url('/') }}">
                         {{ config('app.name', 'Laravel') }}
                     </a>
+                    <a class="navbar-brand" href="{{url('/saisieUtilisateur')}}">
+                        Saisie
+                    </a>
+                    <a class="navbar-brand" href="{{url('/statistiques')}}">
+                        Statistiques
+                    </a>
+                    <a class="navbar-brand" href="{{url('/donneesInstallation')}}">
+                        Données Installation
+                    </a>
+                    <a class="navbar-brand" href="{{url('/profil')}}">
+                        Profil
+                    </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">

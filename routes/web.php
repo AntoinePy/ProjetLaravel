@@ -18,5 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
+Route::get('/donneesInstallation', 'DonneesInstallationController@create')->name('donneesInstallation');
+Route::get('/saisieUtilisateur','SaisieUtilisateurController@create')->name('saisieUtilisateur');
+Route::get('/statistiques','StatistiquesController@create')->name('statistiques');
+Route::get('/profil','ProfilController@create')->name('profil');
