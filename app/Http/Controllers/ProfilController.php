@@ -18,4 +18,11 @@ class ProfilController extends Controller
             return view('auth\login');
         }
     }
+    public function edit(){
+        if(Auth::check()){
+            return view('profiledit');
+        }else{
+            return view('auth\login');
+        }
+    }
 }

@@ -22,3 +22,4 @@ Route::get('/donneesInstallation', 'DonneesInstallationController@create')->name
 Route::get('/saisieUtilisateur','SaisieUtilisateurController@create')->name('saisieUtilisateur');
 Route::get('/statistiques','StatistiquesController@create')->name('statistiques');
 Route::get('/profil','ProfilController@create')->name('profil');
+Route::get('/profil/edit','ProfilController@edit')->name('profiledit');
