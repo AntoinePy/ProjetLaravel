@@ -1,8 +1,17 @@
 @extends('layouts.app')
 @section('content')
+@if(count($errors))
+    <div class="alert alert-danger">
+        <ul>
+            @foreach($errors->all() as $error)
+                <li>{{$error}}</li>
+                @endforeach
+        </ul>
 
+    </div>
+@endif
     <h1>Profil Edit</h1>
-    {!! Form::open(['method'=>'put']) !!}
+    {!! Form::open(['url'=>'profil/'.$user->id.'/update','method'=>'put']) !!}
     <div class="form-group">
         {!! Form::label('name','Name') !!}
         {!! Form::text('name','',['class'=>'form-control']) !!}
@@ -15,7 +24,7 @@
         {!! Form::label('password','Password') !!}
         {!! Form::text('password','',['class'=>'form-control']) !!}
     </div>
-    <button class="btn btn-primary">Valider</button>
+    <button type="submit" class="btn btn-primary">Valider</button>
     {!! Form::close() !!}
     <a href="{{url('/profil')}}">
         Retour

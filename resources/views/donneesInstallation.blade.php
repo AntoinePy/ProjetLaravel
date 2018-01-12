@@ -2,25 +2,33 @@
 @section('content')
 
     <h1>Données installation</h1>
-    {!! Form::open(['method'=>'put']) !!}
-    <div class="form-group">
-        {!! Form::label('nombrepanneaux','NombrePanneaux') !!}
-        {!! Form::number('nombrepanneaux','',['class'=>'form-control']) !!}
-    </div>
-    <div class="form-group">
-        {!! Form::label('surface','Surface') !!}
-        {!! Form::number('surface','',['class'=>'form-control']) !!}
-    </div>
-    <div class="form-group">
-        {!! Form::label('type','Type') !!}
-        {!! Form::text('type','',['class'=>'form-control']) !!}
-    </div>
-    <div class="form-group">
-        {!! Form::label('Date','Date') !!}
-        {!! Form::selectRange('number',1,30) !!}
-        {!!  Form::selectMonth('month') !!}
-        {!!  Form::selectYear('year',2000,2100) !!}
-    </div>
-    <button class="btn btn-primary">Valider</button>
+    <form action="/insertDonnees" method="post">
+        <table>
+            <tr>
+                <td> Nombre de panneaux : </td>
+                <td><input type="text" name="nombrePanneaux"></td>
+            </tr>
+            <tr>
+                <td> Surface : </td>
+                <td><input type="text" name="surface"></td>
+            </tr>
+            <tr>
+                <td> Latitude : </td>
+                <td><input type="text" name="latitude"></td>
+            </tr>
+            <tr>
+                <td> Longitude : </td>
+                <td><input type="text" name="longitude"></td>
+            </tr>
+            <tr>
+                <td> Coût Installation : </td>
+                <td><input type="text" name="cout"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" name="submit" value="Valider"></td>
+            </tr>
+        </table>
+    </form>
+
     {!! Form::close() !!}
 @endsection

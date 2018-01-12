@@ -6,8 +6,14 @@
 {{--
     {!! $user->render() !!}
 --}}
+<p>
+    <li>{{$user->id}}</li>
+    <li>{{$user->name}}</li>
+    <li>{{$user->email}}</li>
 
-<a href="{{url('/profil/edit')}}">
+</p>
+
+<a href="{{url('/profil')}}/{{$user->id}}/edit">
     Modifier vos infos
 </a>
 @endsection
