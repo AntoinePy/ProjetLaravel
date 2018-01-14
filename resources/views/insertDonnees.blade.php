@@ -32,6 +32,10 @@
         {!! Form::label('coutInstallation','Coût Installation') !!}
         {!! Form::text('coutInstallation','',['class'=>'form-control']) !!}
     </div>
+    <div class="form-group">
+        {!! Form::label('dateInstallation','Date Installation') !!}
+        {!! Form::date('dateInstallation','',['class'=>'form-control']) !!}
+    </div>
     <button type="submit" class="btn btn-primary">Valider</button>
     {!! Form::close() !!}
     <a href="{{url('/donneesInstallation')}}">

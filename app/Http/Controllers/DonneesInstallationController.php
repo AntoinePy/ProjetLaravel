@@ -27,7 +27,6 @@ class DonneesInstallationController extends Controller
     public function insertDonnees(Request $req){
         $id_site = 1;
         $id_panneau = 1;
-        $dateInstallation = date_create('2010-01-10');
         $positionInstallation = "180";
         $id_user = 1;
            $this->validate($req,[
@@ -36,13 +35,14 @@ class DonneesInstallationController extends Controller
                 'latitude'=>'required',
                 'longitude'=>'required',
                 'coutInstallation'=>'required',
+                'dateInstallation'=>'required'
             ]);
         DB::table('sites')
             ->insert(
                 ['latitude' =>$req['latitude'],
                     'longitude' =>$req['longitude'],
                     'coutInstallation'=>$req['coutInstallation'],
-                    'dateInstallation'=>$dateInstallation,
+                    'dateInstallation'=>$req['dateInstallation'],
                     'positionInstallation'=>$positionInstallation,
                     'id_user'=>$id_user
                 ]);

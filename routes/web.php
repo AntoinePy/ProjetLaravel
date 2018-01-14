@@ -20,6 +20,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/saisieUtilisateur','SaisieUtilisateurController@create')->name('saisieUtilisateur');
+Route::get('/saisieUtilisateur/insert','SaisieUtilisateurController@insert')->name('saisieInsert');
+Route::post('/saisieUtilisateur/insertSaisie','SaisieUtilisateurController@insertSaisie')->name('insertSaisie');
 
 Route::get('/statistiques','StatistiquesController@create')->name('statistiques');
 

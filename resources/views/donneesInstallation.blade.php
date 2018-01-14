@@ -8,6 +8,6 @@
     </p>
 
     <a href="{{url('/donneesInstallation/insert')}}">
-        Modifier vos données
+        Ajouter vos données
     </a>
 @endsection
