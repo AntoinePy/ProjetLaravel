@@ -17,22 +17,49 @@ class DonneesInstallationController extends Controller
             return view('auth\login');
         }
     }
+    public function insert(){
+        if(Auth::check()){
+            return view('insertDonnees');
+        }else{
+            return view('auth\login');
+        }
+    }
     public function insertDonnees(Request $req){
-        $nombrePanneaux = $req->input('nombrePanneaux');
-        $surface = $req->input('surface');
-        $latitude = $req->input('latitude');
-        $longitude = $req->input('longitude');
-        $cout = $req->input('cout');
+        $id_site = 1;
+        $id_panneau = 1;
+        $dateInstallation = date_create('2010-01-10');
+        $positionInstallation = "180";
+        $id_user = 1;
+           $this->validate($req,[
+               'nombrePanneaux'=>'required',
+                'surface'=>'required',
+                'latitude'=>'required',
+                'longitude'=>'required',
+                'coutInstallation'=>'required',
+            ]);
+        DB::table('sites')
+            ->insert(
+                ['latitude' =>$req['latitude'],
+                    'longitude' =>$req['longitude'],
+                    'coutInstallation'=>$req['coutInstallation'],
+                    'dateInstallation'=>$dateInstallation,
+                    'positionInstallation'=>$positionInstallation,
+                    'id_user'=>$id_user
+                ]);
 
-        $data1 = array('nb'=>$nombrePanneaux);
-        $data2 = array('surface'=>$surface);
-        $data3 = array('latitude'=>$latitude , 'longitude' =>$longitude, 'cout'=>$cout);
+        DB::table('panneaux')
+            ->insert(
+                ['surface' =>$req['surface']
+                ]);
+        DB::table('panneauxparsite')
+            ->insert(
+                ['nb' => $req['nombrePanneaux'],
+                    'id_site' => $id_site,
+                    'id_panneau' => $id_panneau
+                ]);
 
-        DB::table('panneauxparsite')->insert($data1);
-        DB::table('panneaux')->insert($data2);
-        DB::table('sites')->insert($data3);
 
-        return view('insertDonnees');
+        return view("/donneesInstallation");
 
 
     }

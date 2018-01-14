@@ -18,10 +18,15 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/donneesInstallation', 'DonneesInstallationController@create')->name('donneesInstallation');
+
 Route::get('/saisieUtilisateur','SaisieUtilisateurController@create')->name('saisieUtilisateur');
+
 Route::get('/statistiques','StatistiquesController@create')->name('statistiques');
+
 Route::get('/profil','ProfilController@create')->name('profil');
 Route::get('/profil/{user}/edit','ProfilController@edit')->name('profiledit');
 Route::put('/profil/{user}/update', 'ProfilController@update')->name('profilupdate');
-Route::post('/insertDonnees','DonneesInstallationController@insert')->name('insertDonnees');
+
+Route::get('/donneesInstallation', 'DonneesInstallationController@create')->name('donneesInstallation');
+Route::get('/donneesInstallation/insert', 'DonneesInstallationController@insert')->name('insert');
+Route::post('/donneesInstallation/insertDonnees','DonneesInstallationController@insertDonnees')->name('insertDonnees');
