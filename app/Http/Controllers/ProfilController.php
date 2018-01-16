@@ -43,7 +43,7 @@ class ProfilController extends Controller
                     'password'=>$request['password']
 
             ]);
-
+        //$id = Auth::user()->id;
         //dump(DB::table('users')->where('id', $id));die();
         return view("/profil",['user'=> User::find($id)]);
 

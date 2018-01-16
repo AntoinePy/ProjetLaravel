@@ -29,7 +29,10 @@ class DonneesInstallationController extends Controller
         $id_panneau = 1;
         $positionInstallation = "180";
         $id_user = 1;
-           $this->validate($req,[
+        $id = Auth::user()->id;
+        //echo($id);
+        $id_user = $id;
+        $this->validate($req,[
                'nombrePanneaux'=>'required',
                 'surface'=>'required',
                 'latitude'=>'required',
