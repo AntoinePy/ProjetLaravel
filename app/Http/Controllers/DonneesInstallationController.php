@@ -25,13 +25,25 @@ class DonneesInstallationController extends Controller
         }
     }
     public function insertDonnees(Request $req){
-        $id_site = 1;
-        $id_panneau = 1;
-        $positionInstallation = "180";
+        //id user
         $id_user = 1;
         $id = Auth::user()->id;
-        //echo($id);
         $id_user = $id;
+
+        //id site
+
+        $id_site = 1;
+        $site = DB::table('sites')->where('id_user',$id)->value('id');
+        $id_site = $site;
+
+        //id panneau
+        $id_panneau = 1;
+        $idpanneaux = DB::table('panneaux')->where('surface',$req['surface'])->value('id');
+        $panneau = DB::table('panneauxparsite')->where('id_panneau',$idpanneaux)->value('id');
+        $id_panneau = $panneau;
+
+
+        $positionInstallation = "180";
         $this->validate($req,[
                'nombrePanneaux'=>'required',
                 'surface'=>'required',
@@ -46,7 +58,7 @@ class DonneesInstallationController extends Controller
                     'longitude' =>$req['longitude'],
                     'coutInstallation'=>$req['coutInstallation'],
                     'dateInstallation'=>$req['dateInstallation'],
-                    'positionInstallation'=>$positionInstallation,
+                    'positionInstallation'=>$req['positionInstallation'],
                     'id_user'=>$id_user
                 ]);
 

@@ -33,6 +33,10 @@
         {!! Form::text('coutInstallation','',['class'=>'form-control']) !!}
     </div>
     <div class="form-group">
+        {!! Form::label('positionInstallation','Position Installation') !!}
+        {!! Form::text('positionInstallation','',['class'=>'form-control']) !!}
+    </div>
+    <div class="form-group">
         {!! Form::label('dateInstallation','Date Installation') !!}
         {!! Form::date('dateInstallation','',['class'=>'form-control']) !!}
     </div>

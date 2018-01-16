@@ -32,7 +32,7 @@ class SaisieUtilisateurController extends Controller
         //$currentUser = User::find($id);
         //2. Recuperer l'id du site de l'user courant
         $site = DB::table('sites')->where('id_user',$id)->value('id');
-        echo $site;
+        //echo $site;
         //3. L'affecter à id_site
         $id_site = $site;
         $this->validate($req,[
