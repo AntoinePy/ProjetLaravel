@@ -36,7 +36,7 @@
     <div class="container">
         <div class="intro-text">
             <div class="intro-lead-in"></div>
-            <div class="intro-heading text-uppercase">Panneaux photovoltaïques</div>
+            <div class="intro-heading text-uppercase">Voltaico</div>
             <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Fonctionnalités</a>
         </div>
     </div>
@@ -48,39 +48,39 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <h2 class="section-heading text-uppercase">Fonctionnalités</h2>
-                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                <h3 class="section-subheading text-muted">Voici ce que vous permet le site Voltaico</h3>
             </div>
         </div>
         <div class="row text-center">
             <div class="col-md-4">
             <span class="fa-stack fa-4x">
-              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-              <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
+              <a href="http//www.google.fr"><i class="fa fa-circle fa-stack-2x text-primary"> </i></a>
+              <i class="fa fa-edit fa-stack-1x fa-inverse"></i>
             </span>
-                <h4 class="service-heading">E-Commerce</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                <h4 class="service-heading">Saisie des données</h4>
+                <p class="text-muted">Le site vous permet de saisir les données correspondants à votre installation photovoltaïque</p>
             </div>
             <div class="col-md-4">
             <span class="fa-stack fa-4x">
               <i class="fa fa-circle fa-stack-2x text-primary"></i>
-              <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+              <i class="fa fa-tasks fa-stack-1x fa-inverse"></i>
             </span>
-                <h4 class="service-heading">Responsive Design</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                <h4 class="service-heading">Statistiques</h4>
+                <p class="text-muted">Retrouvez les données de performance de vos panneaux</p>
             </div>
             <div class="col-md-4">
             <span class="fa-stack fa-4x">
               <i class="fa fa-circle fa-stack-2x text-primary"></i>
-              <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
+              <i class="fa fa-flash fa-stack-1x fa-inverse"></i>
             </span>
-                <h4 class="service-heading">Web Security</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                <h4 class="service-heading">Données installation</h4>
+                <p class="text-muted">Voyez un aperçu des données de votre installation (emplacement...)</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Portfolio Grid -->
+{{--<!-- Portfolio Grid -->
 <section class="bg-light" id="portfolio">
     <div class="container">
         <div class="row">
@@ -348,23 +348,23 @@
             </div>
         </div>
     </div>
-</section>
+</section>--}}
 
 <!-- Clients -->
 <section class="py-5">
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-sm-6">
-                <a href="#">
-                    <img class="img-fluid d-block mx-auto" src="img/logos/envato.jpg" alt="">
+                <a href="http://www.iut-bm.univ-fcomte.fr/">
+                    <img class="img-fluid d-block mx-auto" src="img/logos/iutbm.png" alt="">
                 </a>
             </div>
             <div class="col-md-3 col-sm-6">
-                <a href="#">
-                    <img class="img-fluid d-block mx-auto" src="img/logos/designmodo.jpg" alt="">
+                <a href="http://www.iut-bm.univ-fcomte.fr/pages/fr/dut-info-14115.html">
+                    <img class="img-fluid d-block mx-auto" src="img/logos/logoinfo.PNG" alt="">
                 </a>
             </div>
-            <div class="col-md-3 col-sm-6">
+            {{--<div class="col-md-3 col-sm-6">
                 <a href="#">
                     <img class="img-fluid d-block mx-auto" src="img/logos/themeforest.jpg" alt="">
                 </a>
@@ -373,12 +373,12 @@
                 <a href="#">
                     <img class="img-fluid d-block mx-auto" src="img/logos/creative-market.jpg" alt="">
                 </a>
-            </div>
+            </div>--}}
         </div>
     </div>
 </section>
 
-<!-- Contact -->
+{{--<!-- Contact -->
 <section id="contact">
     <div class="container">
         <div class="row">
@@ -421,47 +421,9 @@
             </div>
         </div>
     </div>
-</section>
+</section>--}}
 
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <span class="copyright">Copyright &copy; Your Website 2017</span>
-            </div>
-            <div class="col-md-4">
-                <ul class="list-inline social-buttons">
-                    <li class="list-inline-item">
-                        <a href="#">
-                            <i class="fa fa-twitter"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="#">
-                            <i class="fa fa-facebook"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="#">
-                            <i class="fa fa-linkedin"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-4">
-                <ul class="list-inline quicklinks">
-                    <li class="list-inline-item">
-                        <a href="#">Privacy Policy</a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="#">Terms of Use</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</footer>
+@include('layouts.footer')
 
 <!-- Portfolio Modals -->
 
