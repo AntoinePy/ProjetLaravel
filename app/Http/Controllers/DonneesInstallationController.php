@@ -14,7 +14,7 @@ class DonneesInstallationController extends Controller
         if(Auth::check()){
             $id = Auth::user()->id;
             $site2 = DB::table('sites')->where('id_user',$id)->value('id');
-            //echo($site);
+            //echo($site); oui
             $site1 = DB::table('sites')->where('id_user',$id)->first();
             $panneau = DB::table('panneauxparsite')->where('id_site',$site2)->first();
             //echo($panneau);
