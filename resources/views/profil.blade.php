@@ -7,9 +7,9 @@
     {!! $user->render() !!}
 --}}
 <p>
-    <li>{{$user->id}}</li>
-    <li>{{$user->name}}</li>
-    <li>{{$user->email}}</li>
+        <li>{{$user->id}}</li>
+        <li>{{$user->name}}</li>
+        <li>{{$user->email}}</li>
 
 </p>
 

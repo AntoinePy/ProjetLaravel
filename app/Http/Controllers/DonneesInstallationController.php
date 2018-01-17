@@ -12,7 +12,13 @@ class DonneesInstallationController extends Controller
 
     public function create(){
         if(Auth::check()){
-            return view('donneesInstallation');
+            $id = Auth::user()->id;
+            $site2 = DB::table('sites')->where('id_user',$id)->value('id');
+            //echo($site);
+            $site1 = DB::table('sites')->where('id_user',$id)->first();
+            $panneau = DB::table('panneauxparsite')->where('id_site',$site2)->first();
+            //echo($panneau);
+            return view('donneesInstallation',['site1'=>$site1,'panneau'=>$panneau]);
         }else{
             return view('auth\login');
         }
@@ -74,7 +80,7 @@ class DonneesInstallationController extends Controller
                 ]);
 
 
-        return view("/donneesInstallation");
+        return view("/donneesInstallation",['site'=>$site,'panneau'=>$panneau]);
 
 
     }

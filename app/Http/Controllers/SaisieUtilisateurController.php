@@ -13,7 +13,9 @@ class SaisieUtilisateurController extends Controller
 {
     public function create(){
         if(Auth::check()){
-            return view('saisieUtilisateur');
+            $id = Auth::user()->id;
+            $prod = DB::table('productions')->where('id_site',$id)->get();
+            return view('saisieUtilisateur',['prod'=>$prod]);
         }else{
             return view('auth\login');
         }
@@ -32,6 +34,7 @@ class SaisieUtilisateurController extends Controller
         //$currentUser = User::find($id);
         //2. Recuperer l'id du site de l'user courant
         $site = DB::table('sites')->where('id_user',$id)->value('id');
+        //echo($site);
         //echo $site;
         //3. L'affecter à id_site
         $id_site = $site;
@@ -46,13 +49,11 @@ class SaisieUtilisateurController extends Controller
                     'date' =>$req['date'],
                     'id_site' =>$id_site
                 ]);
+        $id = Auth::user()->id;
+        $prod = DB::table('productions')->where('id_site',$id)->get();
 
-
-        return view("/saisieUtilisateur");
-
+        return view("/saisieUtilisateur",['prod'=>$prod]);
 
     }
-
-
 
 }

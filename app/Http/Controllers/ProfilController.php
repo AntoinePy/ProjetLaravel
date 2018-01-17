@@ -13,7 +13,8 @@ class ProfilController extends Controller
 {
     public function create(){
         if(Auth::check()){
-            $user = DB::table('users')->first();
+            $id = Auth::user()->id;
+            $user = DB::table('users')->where('id',$id)->first();
             return view('profil',['user'=>$user]);
         }else{
             return view('auth\login');
