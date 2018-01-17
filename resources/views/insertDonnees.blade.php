@@ -45,4 +45,5 @@
     <a href="{{url('/donneesInstallation')}}">
         Retour
     </a>
+    @include('layouts.footer')
 @endsection

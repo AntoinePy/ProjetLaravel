@@ -16,4 +16,5 @@
     <a href="{{url('/saisieUtilisateur')}}">
         Retour
     </a>
+    @include('layouts.footer')
 @endsection

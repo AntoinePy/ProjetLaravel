@@ -27,5 +27,5 @@
         Ajouter vos données
     </a>
     @endif
-
+    @include('layouts.footer')
 @endsection

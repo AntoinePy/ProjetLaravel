@@ -29,4 +29,5 @@
     <a href="{{url('/profil')}}">
         Retour
     </a>
+@include('layouts.footer')
 @endsection

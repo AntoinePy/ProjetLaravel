@@ -20,4 +20,6 @@
     <a href="{{url('/saisieUtilisateur/insert')}}">
         Ajouter des saisies
     </a>
+
+    @include('layouts.footer')
 @endsection

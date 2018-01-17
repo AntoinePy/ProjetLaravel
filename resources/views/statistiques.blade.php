@@ -10,6 +10,7 @@ use Khill\Lavacharts\Charts\BarChart;
     <a class="btn btn-primary btn-x1 text-uppercase" href="#">Production annuelle</a>
 
     <div id="ca_graph"></div>
+
     {!! $chart->render() !!}
     @include('layouts.footer')
 @endsection

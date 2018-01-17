@@ -16,4 +16,5 @@
 <a href="{{url('/profil')}}/{{$user->id}}/edit">
     Modifier vos infos
 </a>
+@include('layouts.footer')
 @endsection

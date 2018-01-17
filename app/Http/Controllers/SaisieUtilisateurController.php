@@ -52,7 +52,7 @@ class SaisieUtilisateurController extends Controller
         $id = Auth::user()->id;
         $prod = DB::table('productions')->where('id_site',$id)->get();
 
-        return view("/saisieUtilisateur",['prod'=>$prod]);
+        return redirect("/saisieUtilisateur");
 
     }
 
