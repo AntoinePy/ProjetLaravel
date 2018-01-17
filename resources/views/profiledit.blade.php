@@ -22,7 +22,7 @@
     </div>
     <div class="form-group">
         {!! Form::label('password','Password') !!}
-        {!! Form::text('password','',['class'=>'form-control']) !!}
+        {{ Form::password('password') }}
     </div>
     <button type="submit" class="btn btn-primary">Valider</button>
     {!! Form::close() !!}

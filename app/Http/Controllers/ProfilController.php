@@ -41,7 +41,7 @@ class ProfilController extends Controller
             ->update(
                 ['name' => $request['name'],
                  'email' =>$request['email'],
-                    'password'=>$request['password']
+                    'password'=>bcrypt($request['password'])
 
             ]);
         //$id = Auth::user()->id;

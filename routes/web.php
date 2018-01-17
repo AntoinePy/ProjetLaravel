@@ -32,3 +32,6 @@ Route::put('/profil/{user}/update', 'ProfilController@update')->name('profilupda
 Route::get('/donneesInstallation', 'DonneesInstallationController@create')->name('donneesInstallation');
 Route::get('/donneesInstallation/insert', 'DonneesInstallationController@insert')->name('insert');
 Route::post('/donneesInstallation/insertDonnees','DonneesInstallationController@insertDonnees')->name('insertDonnees');
+
+Route::get('/donneesInstallation/{user}/edit','DonneesInstallationController@edit')->name('editDonnees');
+Route::put('/donneesInstallation/{user}/update', 'DonneesInstallationController@update')->name('updateDonnees');
