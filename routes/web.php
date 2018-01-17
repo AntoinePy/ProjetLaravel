@@ -24,6 +24,10 @@ Route::get('/saisieUtilisateur/insert','SaisieUtilisateurController@insert')->na
 Route::post('/saisieUtilisateur/insertSaisie','SaisieUtilisateurController@insertSaisie')->name('insertSaisie');
 
 Route::get('/statistiques','StatistiquesController@create')->name('statistiques');
+Route::get('/statistiques/prodJourna','StatistiquesController@prodJourna')->name('prodJourna');
+Route::get('/statistiques/prodMensuelle','StatistiquesController@prodMensuelle')->name('prodMensuelle');
+Route::get('/statistiques/prodAnnuelle','StatistiquesController@prodAnnuelle')->name('prodAnnuelle');
+
 
 Route::get('/profil','ProfilController@create')->name('profil');
 Route::get('/profil/{user}/edit','ProfilController@edit')->name('profiledit');

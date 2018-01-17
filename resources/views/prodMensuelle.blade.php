@@ -13,4 +13,3 @@ use Khill\Lavacharts\Charts\BarChart;
     {!! $chart->render() !!}
     @include('layouts.footer')
 @endsection
-

@@ -46,6 +46,7 @@ class DonneesInstallationController extends Controller
         $id_panneau = 1;
         $idpanneaux = DB::table('panneaux')->where('surface',$req['surface'])->value('id');
         $panneau = DB::table('panneauxparsite')->where('id_panneau',$idpanneaux)->value('id');
+
         $id_panneau = $panneau;
 
 
@@ -74,7 +75,7 @@ class DonneesInstallationController extends Controller
                 ]);
         DB::table('panneauxparsite')
             ->insert(
-                ['nb' => $req['nombrePanneaux'],
+                    ['nb' => $req['nombrePanneaux'],
                     'id_site' => $id_site,
                     'id_panneau' => $id_panneau
                 ]);
