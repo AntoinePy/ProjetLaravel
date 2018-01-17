@@ -26,7 +26,7 @@
         </table>
 
            {{-- <h2>Nombre de panneaux</h2>
-            <li>{{$panneau->nb}}</li>
+            <li>{{$panneau->nb}}</li>j
 --}}
             <a class="btn btn-primary btn-x1 text-uppercase" href="{{url('/donneesInstallation')}}/{{$user->id}}/edit">
                 Modifier vos données
