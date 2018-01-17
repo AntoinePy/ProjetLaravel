@@ -8,17 +8,17 @@
             <div class="col-md-4">
                 <ul class="list-inline social-buttons">
                     <li class="list-inline-item">
-                        <a href="#">
+                        <a href="https://twitter.com/py_antoine">
                             <i class="fa fa-twitter"></i>
                         </a>
                     </li>
                     <li class="list-inline-item">
-                        <a href="#">
+                        <a href="https://www.facebook.com/guildantoine">
                             <i class="fa fa-facebook"></i>
                         </a>
                     </li>
                     <li class="list-inline-item">
-                        <a href="#">
+                        <a href="https://www.linkedin.com/in/antoine-py-17ba1614b/">
                             <i class="fa fa-linkedin"></i>
                         </a>
                     </li>
@@ -27,10 +27,10 @@
             <div class="col-md-4">
                 <ul class="list-inline quicklinks">
                     <li class="list-inline-item">
-                        <a href="#">Privacy Policy</a>
+                        <a href="#">Politique de confidentialité</a>
                     </li>
                     <li class="list-inline-item">
-                        <a href="#">Terms of Use</a>
+                        <a href="#">Conditions d'utilisation</a>
                     </li>
                 </ul>
             </div>

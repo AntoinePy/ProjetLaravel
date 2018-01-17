@@ -3,27 +3,37 @@
 
 
     <h1>Données Installation</h1>
-    Afficher les données de l'installation de l'user ici <br>
     @if(isset($site1))
-            <h2>Latitude</h2>
-            <li>{{$site1->latitude}}</li>
-            <h2>Longitude</h2>
-            <li>{{$site1->longitude}}</li>
-            <h2>Cout Installation</h2>
-            <li>{{$site1->coutInstallation}}</li>
-            <h2>Date Installation</h2>
-            <li>{{$site1->dateInstallation}}</li>
-            <h2>Position Installation</h2>
-            <li>{{$site1->positionInstallation}}</li>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Latitude</th>
+                <th scope="col">Longitude</th>
+                <th scope="col">Coût installation</th>
+                <th scope="col">Date installation</th>
+                <th scope="col">Position installation</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{$site1->latitude}}</td>
+                <td>{{$site1->longitude}}</td>
+                <td>{{$site1->coutInstallation}}</td>
+                <td>{{$site1->dateInstallation}}</td>
+                <td>{{$site1->positionInstallation}}</td>
+            </tr>
+            </tbody>
+        </table>
+
            {{-- <h2>Nombre de panneaux</h2>
             <li>{{$panneau->nb}}</li>
 --}}
-            <a href="{{url('/donneesInstallation')}}/{{$user->id}}/edit">
+            <a class="btn btn-primary btn-x1 text-uppercase" href="{{url('/donneesInstallation')}}/{{$user->id}}/edit">
                 Modifier vos données
             </a>
 
     @else
-    <a href="{{url('/donneesInstallation/insert')}}">
+    <a class="btn btn-primary btn-x1 text-uppercase" href="{{url('/donneesInstallation/insert')}}">
         Ajouter vos données
     </a>
     @endif
