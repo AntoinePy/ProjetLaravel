@@ -14,7 +14,8 @@ class SaisieUtilisateurController extends Controller
     public function create(){
         if(Auth::check()){
             $id = Auth::user()->id;
-            $prod = DB::table('productions')->where('id_site',$id)->get();
+            $site = DB::table('sites')->where('id_user',$id)->value('id');
+            $prod = DB::table('productions')->where('id_site',$site)->get();
             return view('saisieUtilisateur',['prod'=>$prod]);
         }else{
             return view('auth\login');
@@ -47,7 +48,8 @@ class SaisieUtilisateurController extends Controller
             ->insert(
                 ['nbkWh' =>$req['production'],
                     'date' =>$req['date'],
-                    'id_site' =>$id_site
+                    'id_site' =>$id_site,
+                    'created_at'=>$req['date']
                 ]);
         $id = Auth::user()->id;
         $prod = DB::table('productions')->where('id_site',$id)->get();

@@ -11,5 +11,6 @@ use Khill\Lavacharts\Charts\BarChart;
 
     <div id="ca_graph"></div>
     {!! $chart->render() !!}
+    {!! $charts->render() !!}
     @include('layouts.footer')
 @endsection

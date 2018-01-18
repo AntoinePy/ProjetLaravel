@@ -16,12 +16,17 @@ class StatistiquesController extends Controller
 
     public function create(){
         if(Auth::check()){
-            echo(User::all());
-            $chart = Charts::database(User::all(), 'bar', 'highcharts')
+            $production = DB::table('productions')->get();
+            $nbkw = DB::table('productions')->value('nbkWh');
+            // echo($production);
+            $chart = Charts::create('bar','highcharts')
+                ->title('Production Journalière')
                 ->elementLabel("Total")
-                ->dimensions(1000, 500)
-                ->responsive(false)
-                ->groupBy('name');
+                ->labels($production->pluck('date'))
+                ->values($production->pluck('nbkWh'))
+                ->dimensions(1000,500)
+                ->responsive(true);
+
             return view('statistiques',['chart' => $chart]);
         }else{
             return view('auth\login');
@@ -31,7 +36,7 @@ class StatistiquesController extends Controller
         if(Auth::check()){
             $production = DB::table('productions')->get();
             $nbkw = DB::table('productions')->value('nbkWh');
-            echo($production);
+           // echo($production);
             $chart = Charts::create('bar','highcharts')
                 ->title('Production Journalière')
                 ->elementLabel("Total")
@@ -39,8 +44,14 @@ class StatistiquesController extends Controller
                 ->values($production->pluck('nbkWh'))
                 ->dimensions(1000,500)
                 ->responsive(true);
-
-            return view('prodJourna',['chart' => $chart]);
+            $charts = Charts::create('line','highcharts')
+                ->title('Production Journalière')
+                ->elementLabel("Total")
+                ->labels($production->pluck('date'))
+                ->values($production->pluck('nbkWh'))
+                ->dimensions(1000,500)
+                ->responsive(true);
+            return view('prodJourna',['chart' => $chart , 'charts' => $charts]);
         }else{
             return view('auth\login');
         }
@@ -49,12 +60,22 @@ class StatistiquesController extends Controller
         if(Auth::check()){
            $production = DB::table('productions')->get();
             $chart = Charts::database($production, 'bar', 'highcharts')
+                ->title('Production Mensuelle')
                 ->elementLabel("Total")
                 ->dimensions(1000, 500)
+                ->labels($production->pluck('created_at'))
+                ->values($production->pluck('nbkWh'))
                 ->responsive(false)
                 ->groupByMonth(2017,true);
-
-            return view('prodMensuelle',['chart'=>$chart]);
+            $charts = Charts::database($production, 'line', 'highcharts')
+                ->title('Production Mensuelle')
+                ->elementLabel("Total")
+                ->dimensions(1000, 500)
+                ->labels($production->pluck('created_at'))
+                ->values($production->pluck('nbkWh'))
+                ->responsive(false)
+                ->groupByMonth(2017,true);
+            return view('prodMensuelle',['chart'=>$chart , 'charts' => $charts]);
 
         }else{
             return view('auth\login');
@@ -64,12 +85,19 @@ class StatistiquesController extends Controller
         if(Auth::check()){
             $production = DB::table('productions')->get();
             $chart = Charts::database($production, 'bar', 'highcharts')
+                ->title('Production Annuelle')
+                ->elementLabel("Total")
+                ->dimensions(1000, 500)
+                ->responsive(false)
+                ->groupByYear();
+            $charts = Charts::database($production, 'line', 'highcharts')
+                ->title('Production Annuelle')
                 ->elementLabel("Total")
                 ->dimensions(1000, 500)
                 ->responsive(false)
                 ->groupByYear();
 
-            return view('prodAnnuelle',['chart'=>$chart]);
+            return view('prodAnnuelle',['chart'=>$chart , 'charts'=>$charts]);
 
         }else{
             return view('auth\login');
