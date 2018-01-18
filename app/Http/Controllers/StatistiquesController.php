@@ -16,7 +16,9 @@ class StatistiquesController extends Controller
 
     public function create(){
         if(Auth::check()){
-            $production = DB::table('productions')->get();
+            $id = Auth::user()->id;
+            $site = DB::table('sites')->where('id_user',$id)->value('id');
+            $production = DB::table('productions')->where('id_site',$site)->get();
             $nbkw = DB::table('productions')->value('nbkWh');
             // echo($production);
             $chart = Charts::create('bar','highcharts')
@@ -34,7 +36,9 @@ class StatistiquesController extends Controller
     }
     public function prodJourna(){
         if(Auth::check()){
-            $production = DB::table('productions')->get();
+            $id = Auth::user()->id;
+            $site = DB::table('sites')->where('id_user',$id)->value('id');
+            $production = DB::table('productions')->where('id_site',$site)->get();
             $nbkw = DB::table('productions')->value('nbkWh');
            // echo($production);
             $chart = Charts::create('bar','highcharts')
@@ -58,7 +62,9 @@ class StatistiquesController extends Controller
     }
     public function prodMensuelle(){
         if(Auth::check()){
-           $production = DB::table('productions')->get();
+            $id = Auth::user()->id;
+            $site = DB::table('sites')->where('id_user',$id)->value('id');
+            $production = DB::table('productions')->where('id_site',$site)->get();
             $chart = Charts::database($production, 'bar', 'highcharts')
                 ->title('Production Mensuelle')
                 ->elementLabel("Total")
@@ -83,7 +89,9 @@ class StatistiquesController extends Controller
     }
     public function prodAnnuelle(){
         if(Auth::check()){
-            $production = DB::table('productions')->get();
+            $id = Auth::user()->id;
+            $site = DB::table('sites')->where('id_user',$id)->value('id');
+            $production = DB::table('productions')->where('id_site',$site)->get();
             $chart = Charts::database($production, 'bar', 'highcharts')
                 ->title('Production Annuelle')
                 ->elementLabel("Total")
