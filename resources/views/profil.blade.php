@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <link href="css/profil_carte.css" rel="stylesheet">
+    <link href="{{asset('css/profil_carte.css')}}" rel="stylesheet">
 
 {{--
     {!! $user->render() !!}
